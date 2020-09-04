@@ -1,0 +1,363 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background color: #D9D9D9;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: table;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;} /* $$End of Grid Code$$ */
+
+/*
+    <=*= Styling My Cards =*=>
+*/
+
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    margin-bottom: 50px;
+    padding: 0;
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid rgba(0,0,0,0.8);
+    background-color: #D9D9D9;
+}
+
+
+
+.logo{
+    letter-spacing: 1px;
+    float: left;
+    color: black;
+    font-size: 16px;
+    line-height: 80px;
+    padding: 0 6em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.menu{
+    float: right;
+    line-height: 50px;
+    margin: 0 6em;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu ul li {
+    display: inline-block;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: lighter;
+    padding: 0 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul li:nth-child(5) a {
+    color: #009f8b;
+    border: 1px solid #009f8b;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.header h1 {
+    color: #fff;
+    font-size: 46px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.header p {
+    color: #fff;
+    font-size: 24px;
+    font-weight: lighter;
+}
+
+.header button {
+    color: #fff;
+    background: #009f8b; 
+    padding: 18px 38px;
+    border: none;
+    font-size: 14px;
+    margin-top: 40px; 
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+body {
+    margin-top: 50px;
+    background-color: #D9D9D9;
+}
+
+.footer-distributed{
+	background: #373741;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 55px 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Open Sans', cursive;
+	margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-distributed h3 span{
+	color:  lightseagreen;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+  font-weight:400;
+	text-decoration: none;
+	color:  inherit;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #222;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+    
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+    
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+  font-weight:400;
+	vertical-align: middle;
+	margin:0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-distributed .footer-center p a{
+	color:  lightseagreen;
+	text-decoration: none;;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;4
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
+
+.resume {
+    
+    height: 1025px;
+}
+
+.resume2 {
+    height: 600px;
+    margin-bottom: 755px;
+}
+
+.stackImg {
+    margin-top: 45px;
+}
+
+#fullStackImg {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.headLine {
+    margin-top: 75px;
+}
+
+#fullText {
+    margin-right: 50px;
+}
+
+.pText {
+    line-height: 35px;
+}
+
+

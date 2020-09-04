@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Menu & Shopping List</title>
+    <meta name="description" content="A menu planner.">
+    <link rel="stylesheet" href="css/menu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js"></script>
+    <script src="js/lebAngular.js"> </script>
+    <script>
+    $(function () {
+        $(document).scroll(function () {
+        var $nav = $(".navbar-fixed-top");
+    
+        $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+        });
+    });
+        
+        
+    </script>
+    
+</head>
+    
+    
+
+    <body ng-app="myApp" ng-controller="myCon">
+            <div class="nav">
+                <div class="logo">
+                    My Menu Planner
+                </div><!-- logo -->  
+                <div class="menu">
+                    <ul>
+                        <li><a href="http://localhost:8080/landing.html">Home</a></li>
+                        <li><a href="http://localhost:8080/home.html">Menu Planner</a></li>
+                        <li><a href="http://localhost:8080/recepie.html">Cooking Guide</a></li>
+                        <li><a href="http://localhost:8080/about.html">About</a></li>
+                        <li><a href="http://localhost:8080/login.html#">Login</a></li>
+                    </ul>
+                </div><!-- menu -->
+            </div><!-- nav -->       
+        
+<center>
+    
+<div class="row" id="mainContent">
+<span class="col-1"></span> 
+<div  class="col-4" id="slideShow"> 
+  
+
+
+
+<div class="w3-content w3-display-container" id="sliderBoarder">
+
+<!--  Left Right and Button  -->
+<button ng-click="previous()"  id ="myButton" class="w3-button w3-display-left w3-black">&#10094;</button>
+<button ng-click="addTwoMenu(current)" id ="myButton2" class="addHeader">Add To Menu</button>    
+<button ng-click="next()"  id ="myButton" class="w3-button w3-display-right w3-black">&#10095;</button>    
+<br><br>
+    
+<!--  Repeating the slideshow with Recepies  -->
+<div ng-repeat="r in recepie" ng-show="card{{r.id}}" id="recepie{{r.id}}"  class="w3-display-container mySlides">
+  <img src="img/{{r.imgname}}.png" style="width:500px" height="500px">
+  <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+      <p class="mealName">{{r.name}}</p>
+      <p class="sideDish"><span>{{r.description}}</span></p>
+  </div>
+    
+    
+    
+</div>
+
+
+
+</div>
+    </div>
+     
+<div class="col-2" id="cookingIns">
+    <h1>Menu</h1>
+    <hr>
+    <ol>
+        <li ng-repeat="x in menuArray" class="menuli">{{recepieName(x.title)}}<span span ng-click="deleteFromMenu($index)" class="fa fa-window-close-o iconSpan"></span></li>
+    </ol>   
+  
+    </div>    
+        </div>
+    
+<div class="col-2" id="cookingIns">
+    <h1>Shopping List</h1>
+    <hr>
+    <ol class="shoppingList">
+        <li class="shoppingListType">Meat:</li>
+        
+        <li ng-repeat="item in shoppingkart | filter : 'Meat'" class="shoppingListItem"><label><input type="checkbox" id="greenCheckBox"><span><span>{{item.name}}</span> 
+             <span class="ingAmt">{{item.example}}oz</span></span></label></li>
+        
+        <li class="shoppingListType">Produce:</li>
+        
+        <li ng-repeat="item in shoppingkart | filter : 'Produce'" class="shoppingListItem"><label><input type="checkbox" id="greenCheckBox"><span><span>{{item.name}}</span> 
+             <span class="ingAmt">{{item.example}}oz</span></span></label></li>
+         
+        <li class="shoppingListType">Grain:</li>
+        
+        <li ng-repeat="item in shoppingkart | filter : 'Grain'" class="shoppingListItem"><label><input type="checkbox" id="greenCheckBox"><span><span>{{item.name}}</span> 
+             <span class="ingAmt">{{item.example}}oz</span></span></label></li>
+        
+        <li class="shoppingListType">Dairy:</li>
+        
+        <li ng-repeat="item in shoppingkart | filter : 'Dairy'" class="shoppingListItem"><label><input type="checkbox" id="greenCheckBox"><span><span>{{item.name}}</span> 
+             <span class="ingAmt">{{item.example}}oz</span></span></label></li>        
+        
+        <li class="shoppingListType">Baking:</li>
+        
+        <li ng-repeat="item in shoppingkart | filter : 'Baking'" class="shoppingListItem"><label><input type="checkbox" id="greenCheckBox"><span><span>{{item.name}}</span> 
+             <span class="ingAmt">{{item.example}}oz</span></span></label></li> 
+        
+        <li class="shoppingListType">Herbs/Spice:</li>
+        
+        <li ng-repeat="item in shoppingkart | filter : 'Herb'" class="shoppingListItem"><label><input type="checkbox" id="greenCheckBox"><span><span>{{item.name}}</span> 
+             <span class="ingAmt">{{item.example}}oz</span></span></label></li>        
+        
+        <li class="shoppingListType">Condiment:</li>
+        
+        <li ng-repeat="item in shoppingkart | filter : 'Condiment'" class="shoppingListItem"><label><input type="checkbox" id="greenCheckBox"><span><span>{{item.name}}</span> 
+             <span class="ingAmt">{{item.example}}oz</span></span></label></li>        
+        
+    </ol>   
+        </div> 
+<span class="col-1"></span>    
+        </center>
+        
+
+<section></section>
+<footer class="footer-distributed">
+
+			<div class="footer-left">
+
+				<h3>JP's<span>Project</span></h3>
+
+				<p class="footer-links">
+					<a href="#" class="link-1">Home</a>
+					
+					<a href="#">Menu</a>
+				
+					<a href="#">Cooking Guide</a>
+					
+					<a href="#">About</a>
+					
+				</p>
+
+				<p class="footer-company-name">Parkers Webshop © 2020</p>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>908 N Chestnut Str</span> Morrilton, Arkansas</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p><a href="tel:501-652-6190">1.501.652.6190</a></p>
+				</div>
+                
+				<div>
+					<i class="fa fa-envelope-square"></i>
+					<p><a href="mailto:justinallenparker1989@gmail.com">justinallenparker1989@gmail.com</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p class="footer-company-about">
+					<span>About</span>
+					My Menu Planner is a quick and easy way to plan your home menu for the week. Words of wisdom "never put anything heavy on top of fruit." - Charles Roy Washington III
+				</p>
+
+				<div class="footer-icons">
+
+					<a href="https://www.linkedin.com/in/justinparker1989/"><i class="fa fa-linkedin"></i></a>
+					<a href="#"><i class="fa fa-github"></i></a>
+
+				</div>
+
+			</div>
+		</footer>        
+    
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+    
+$('.form').find('input, textarea').on('keyup blur focus', function (e) {
+  
+  var $this = $(this),
+      label = $this.prev('label');
+
+	  if (e.type === 'keyup') {
+			if ($this.val() === '') {
+          label.removeClass('active highlight');
+        } else {
+          label.addClass('active highlight');
+        }
+    } else if (e.type === 'blur') {
+    	if( $this.val() === '' ) {
+    		label.removeClass('active highlight'); 
+			} else {
+		    label.removeClass('highlight');   
+			}   
+    } else if (e.type === 'focus') {
+      
+      if( $this.val() === '' ) {
+    		label.removeClass('highlight'); 
+			} 
+      else if( $this.val() !== '' ) {
+		    label.addClass('highlight');
+			}
+    }
+
+});
+
+$('.tab a').on('click', function (e) {
+  
+  e.preventDefault();
+  
+  $(this).parent().addClass('active');
+  $(this).parent().siblings().removeClass('active');
+  
+  target = $(this).attr('href');
+
+  $('.tab-content > div').not(target).hide();
+  
+  $(target).fadeIn(600);
+  
+});
+</script>
+        
+    </body>
+</html>

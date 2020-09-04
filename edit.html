@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Menu & Shopping List</title>
+    <meta name="description" content="A menu planner.">
+    <link rel="stylesheet" href="css/menu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js"></script>
+    <script src="js/lebAngular.js"> </script>
+    <script>
+    $(function () {
+        $(document).scroll(function () {
+        var $nav = $(".navbar-fixed-top");
+    
+        $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+        });
+    });
+        
+        
+    </script>
+    
+</head>
+    
+    
+
+    <body ng-app="myApp" ng-controller="myCon">
+            <div class="nav">
+                <div class="logo">
+                    My Menu Planner
+                </div><!-- logo -->  
+                <div class="menu">
+                    <ul>
+                        <li><a href="http://localhost:8080/landing.html">Home</a></li>
+                        <li><a href="http://localhost:8080/home.html">Menu Planner</a></li>
+                        <li><a href="http://localhost:8080/recepie.html">Cooking Guide</a></li>
+                        <li><a href="http://localhost:8080/about.html">About</a></li>
+                        <li><a href="http://localhost:8080/login.html#">Login</a></li>
+                    </ul>
+                </div><!-- menu -->
+            </div><!-- nav -->        
+   
+ <div class="row" id="mainContent">
+     <span class="col-1"></span>     
+    
+<div  class="col-3" id="create">        
+        
+<form>
+ <fieldset>
+  <legend>Create Ingredient</legend>
+  <label for="name">Name:&nbsp &nbsp &nbsp &nbsp</label>
+  <input ng-model="ingName" type="text" id="name" name="name"><br><br>
+  <label for="Type">Type:&nbsp &nbsp &nbsp &nbsp &nbsp</label>
+  <input ng-model="ingType" type="text" id="type" name="type"><br><br>
+  <label for="Example">Example:&nbsp</label>
+  <input ng-model="ingExample" type="text" id="example" name="example"><br><br>
+  <input ng-click="addIng()" type="submit" value="Create">
+  <textarea cols="30" rows="8">{{addIngOutput}}</textarea>
+ </fieldset>
+</form>    
+</div>
+     
+<div  class="col-3" id="Update">     
+<form>
+ <fieldset>
+  <legend>Update Ingredient</legend>
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname"><br><br>
+  <label for="email">Email: &nbsp &nbsp &nbsp &nbsp</label>
+  <input type="email" id="email" name="email"><br><br>
+  <input type="submit" value="Submit">
+ </fieldset>
+</form>
+    
+</div> 
+     
+<div  class="col-3" id="delete">     
+<form>
+ <fieldset>
+  <legend>Delete Ingredient</legend>
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname"><br><br>
+  <label for="email">Email: &nbsp &nbsp &nbsp &nbsp</label>
+  <input type="email" id="email" name="email"><br><br>
+  <input type="submit" value="Submit">
+ </fieldset>
+</form>
+    
+</div>
+   
+     </div>
+ 
+        
+        
+<section></section>
+<footer class="footer-distributed">
+
+			<div class="footer-left">
+
+				<h3>JP's<span>Project</span></h3>
+
+				<p class="footer-links">
+					<a href="#" class="link-1">Home</a>
+					
+					<a href="#">Menu</a>
+				
+					<a href="#">Cooking Guide</a>
+					
+					<a href="#">About</a>
+					
+				</p>
+
+				<p class="footer-company-name">Parkers Webshop © 2020</p>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>908 N Chestnut Str</span> Morrilton, Arkansas</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p><a href="tel:501-652-6190">1.501.652.6190</a></p>
+				</div>
+                
+				<div>
+					<i class="fa fa-envelope-square"></i>
+					<p><a href="mailto:justinallenparker1989@gmail.com">justinallenparker1989@gmail.com</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p class="footer-company-about">
+					<span>About</span>
+					My Menu Planner is a quick and easy way to plan your home menu for the week. Words of wisdom "never put anything heavy on top of fruit." - Charles Roy Washington III
+				</p>
+
+				<div class="footer-icons">
+
+					<a href="https://www.linkedin.com/in/justinparker1989/"><i class="fa fa-linkedin"></i></a>
+					<a href="#"><i class="fa fa-github"></i></a>
+
+				</div>
+
+			</div>
+		</footer>        
+    
+
+        
+    </body>
+</html>
